@@ -1,0 +1,14 @@
+{
+  "sample-snippets": {
+    "prefix": "sa-s",
+    "body": [
+      "// Snippets Sample",
+      "// You can quickly jump to the next placeholder with Tab",
+      "const ${1:placeholder1} = ${2:placeholder2} + ${3:placeholder3};",
+      "if (${2:placeholder2} === ${1:placeholder1} - ${3:placeholder3}) {",
+      "console.log('equaled');",
+      "}"
+    ],
+    "description": "Snippets Sample"
+  }
+}

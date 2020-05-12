@@ -1,0 +1,139 @@
+{
+  "name": "sample",
+  "displayName": "sample",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.45.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:sample.helloWorld",
+    "onCommand:sample.quickPick",
+    "onCommand:sample.filePick",
+    "onCommand:sample.outputChannel",
+    "onCommand:sample.dataStorage",
+    "onCommand:sample.progress",
+    "onCommand:sample.webview",
+    "onCommand:sample.statusBar"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sample.helloWorld",
+        "title": "Sample Hello World"
+      },
+      {
+        "command": "sample.quickPick",
+        "title": "Sample Quick Pick"
+      },
+      {
+        "command": "sample.filePick",
+        "title": "Sample File Pick"
+      },
+      {
+        "command": "sample.outputChannel",
+        "title": "Sample Output Channel"
+      },
+      {
+        "command": "sample.dataStorage",
+        "title": "Sample Data Storage"
+      },
+      {
+        "command": "sample.progress",
+        "title": "Sample Progress"
+      },
+      {
+        "command": "sample.webview",
+        "title": "Sample Webview"
+      },
+      {
+        "command": "sample.statusBar",
+        "title": "Sample Status Bar"
+      }
+    ],
+    "configuration": {
+      "title": "Configuration",
+      "properties": {
+        "sample.configuration": {
+          "type": "boolean",
+          "default": false,
+          "description": "sample."
+        },
+        "sample.test": {
+          "type": "boolean",
+          "default": false,
+          "description": "test."
+        }
+      }
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "sample.helloWorld",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "sample.helloWorld",
+        "key": "ctrl+f1",
+        "mac": "cmd+f1",
+        "when": "editorTextFocus"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "sample-explorer",
+          "title": "Sample Explorer",
+          "icon": "resources/sample-explorer.svg"
+        }
+      ]
+    },
+    "views": {
+      "sample-explorer": [
+        {
+          "id": "package-dependencies",
+          "name": "Dependencies"
+        },
+        {
+          "id": "package-outline",
+          "name": "Outline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.45.0",
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "eslint": "^6.8.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.1.2",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  }
+}
